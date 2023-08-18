@@ -1,0 +1,79 @@
+﻿@using EShoppingWEBUI.Core.DTO;
+@model List<CategoryDTO>
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Kategori İşlemleri";
+    Layout = "~/Areas/UserPanel/Views/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+
+
+
+<div class="card-body">
+
+    <table id="tblKategoriler" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>Kategoriler</th>
+                <th style="width:20%"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Convert.ToInt32(i+1)</td>
+                        <td>@Model[i].Name</td>
+
+                    </tr>
+                }
+            }
+
+
+
+        </tbody>
+    </table>
+
+
+</div>
+
+<div class="form-group"><select class="form-control form-control-lg"><option>Kategorilerr</option></select></div>
+
+<header <div class="nav-panel">
+    <div class="nav-panel__container container">
+        <div class="nav-panel__row">
+            <div class="nav-panel__departments">
+
+            </div>
+            <!-- .nav-links -->
+            <div class="nav-panel__nav-links nav-links">
+                <li class="nav-links__item nav-links__item--with-submenu">
+                    <a href="/User/Kategori"><span>Kategoriler <svg class="nav-links__arrow" width="9px" height="6px">
+                        <use xlink:href="images/sprite.svg#arrow-rounded-down-9x6"></use></svg></span>
+                    </a>
+                    <div class="nav-links__megamenu nav-links__megamenu--size--nl" style="left: 355px;">
+
+            </div>
+        </li>
+
+    </div>
+    <!-- .nav-links / end -->
+    <div class="nav-panel__indicators">
+        <div class="indicator"><a href="wishlist.html" class="indicator__button">
+            <span class="indicator__area"><svg width="20px" height="20px"><use xlink:href="images/sprite.svg#heart-20"></use></svg>
+                <span class="indicator__value">0</span></span></a>
+        </div>
+        <div class="indicator indicator--trigger--click"><a href="cart.html" class="indicator__button"><span class="indicator__area"><svg width="20px" height="20px">
+            <use xlink:href="images/sprite.svg#cart-20"></use></svg> <span class="indicator__value">3</span></span></a>
+            <div class="indicator__dropdown">
+
+
+                                </div>
+                            </div>
+
+

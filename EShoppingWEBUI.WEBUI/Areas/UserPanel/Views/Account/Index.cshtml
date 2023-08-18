@@ -1,0 +1,86 @@
+﻿@using EShoppingWEBUI.Core.DTO;
+@model LoginDTO
+@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+
+@Html.AntiForgeryToken()
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<link rel="icon" type="image/png" href="images/favicon.png"><!-- fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i"><!-- css -->
+<link rel="stylesheet" href="/UserUI/bootstrap-4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="/UserUI/owl-carousel-2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="/UserUI/css/style.css"><!-- js -->
+<script src="/UserUI/jquery-3.3.1/jquery.min.js"></script>
+<script src="/UserUI/bootstrap-4.2.1/js/bootstrap.bundle.min.js"></script>
+<script src="/UserUI/owl-carousel-2.3.4/owl.carousel.min.js"></script>
+<script src="/UserUI/nouislider-12.1.0/nouislider.min.js"></script>
+<link rel="stylesheet" href="/UserUI/fontawesome-5.6.1/css/all.min.css">
+<!-- font - stroyka -->
+<link rel="stylesheet" href="fonts/stroyka/stroyka.css">
+
+
+
+
+
+
+<div class="block">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 d-flex">
+				<div class="card flex-grow-1 mb-md-0">
+					<div class="card-body">
+						<h3 class="card-title">Giriş Yap</h3>
+
+						<div class="card-body">
+							@{
+								if (ViewData["LoginError"] != null)
+								{
+									<div class="alert alert-danger alert-dismissible">
+										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+										<h5><i class="icon fas fa-ban"></i> Hata!</h5>
+										@ViewData["LoginError"]
+									</div>
+								}
+							}
+						<form asp-action="UserLogin" asp-controller="Account" method="post">
+							<div class="form-group"></div>
+								<label></label>
+								<input type="text" class="form-control" asp-for="KullanıcıAdı" placeholder="Kullanıcı Adı">
+								<br /><br />
+								<input type="password" class="form-control" asp-for="Şifre" placeholder="Şifre">
+								<br /> <br />
+								<button type="submit" class="btn btn-primary mt-4">Giriş Yap</button>
+						</form>
+						
+							</div>
+							
+							
+						
+
+					</div>
+				</div>
+			</div><div class="col-md-6 d-flex mt-4 mt-md-0">
+				<div class="card flex-grow-1 mb-0">
+					<div class="card-body">
+						<h3 class="card-title">Kayıt Ol</h3>
+						<form>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Kullanıcı Adı">
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Şifre">
+
+							</div>
+
+							<button type="submit" class="btn btn-primary mt-4">Kayıt Ol</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</html>

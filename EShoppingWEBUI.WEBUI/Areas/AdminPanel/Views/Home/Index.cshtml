@@ -1,0 +1,9 @@
+﻿@using EShoppingWEBUI.Core.ViewModel;
+@model UserViewModel
+@{
+    ViewData["Title"] = "Anasayfa";
+    Layout = "~/Areas/AdminPanel/Views/Shared/_Layout.cshtml";
+}
+
+Sayın @Model.AdSoyad.ToUpper()  Sisteme Hoş Geldiniz.  Kullanıcı IDniz @Model.ID.ToString(),   Eposta Adresiniz "@Model.EPosta"
+
